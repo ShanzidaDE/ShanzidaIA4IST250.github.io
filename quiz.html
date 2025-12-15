@@ -67,7 +67,7 @@
         help us figure out how to characterize our unique skin so we can choose the proper skincare.</p>
 </div>
 <div style="margin-left: 1in;  margin-right: 1in; margin-bottom: 0.4in;">
-    <form id="quizForm">
+    <form id="quizForm" name="quizForm">
     <p>1) How does your skin feel after cleansing?</p>
     <input type="radio" name="q1" value="dry"> Dry<br>
     <input type="radio" name="q1" value="oily"> Oily<br>
@@ -159,19 +159,20 @@
     let skinType = form["q1"].value;
     let goal = form["q2"].value;
     let sunscreen = form["q3"].value;
-    if (skinType=="dry") {
-    let message = "Your skin type seems " + skinType + ". " + "Apply a serum before adding moisturizer to help moisture retention. Incorporate ingredients like hyaluronic acid, ceramides, and glycerin to boost hydration and support skin health.";
-    message += "Your main goal is " + goal + ". ";
-    message += (sunscreen !== "daily") ? "Try to use sunscreen more often!" : "Great job using sunscreen daily!";
-    } else if (skinType=="oily") {
-    let message = "Your skin type seems " + skinType + ". " + "Choose lightweight, non-comedogenic moisturizers that hydrate without clogging pores. Look for ingredients like niacinamide, salicylic acid, charcoal, or clay to help manage oil and refine pores.";
-    message += "Your main goal is " + goal + ". ";
-    message += (sunscreen !== "daily") ? "Try to use sunscreen more often!" : "Great job using sunscreen daily!";
+    let message = "";
+
+    if (skinType == "dry") {
+      message = "Your skin type seems " + skinType + ". Apply a serum before adding moisturizer to help moisture retention. Incorporate ingredients like hyaluronic acid, ceramides, and glycerin to boost hydration and support skin health.";
+    } else if (skinType == "oily") {
+      message = "Your skin type seems " + skinType + ". Choose lightweight, non-comedogenic moisturizers that hydrate without clogging pores. Look for ingredients like niacinamide, salicylic acid, charcoal, or clay to help manage oil and refine pores.";
     } else {
-    let message = "Your skin type seems " + skinType + ". " + "Apply lightweight moisturizers to oily areas and richer creams to dry patches as needed. Adjust your routine seasonally — your skin may lean more oily in summer and more dry in winter.";
-    message += "Your main goal is " + goal + ". ";
-    message += (sunscreen !== "daily") ? "Try to use sunscreen more often!" : "Great job using sunscreen daily!";
+      message = "Your skin type seems " + skinType + ". Apply lightweight moisturizers to oily areas and richer creams to dry patches as needed. Adjust your routine seasonally — your skin may lean more oily in summer and more dry in winter.";
     }
+
+    message += " Your main goal is " + goal + ". ";
+    message += (sunscreen !== "daily") ? "Try to use sunscreen more often!" : "Great job using sunscreen daily!";
+
+
 
     document.getElementById("result").innerText = message;
     }

@@ -71,7 +71,7 @@
     <p>1) How does your skin feel after cleansing?</p>
     <input type="radio" name="q1" value="dry"> Dry<br>
     <input type="radio" name="q1" value="oily"> Oily<br>
-    <input type="radio" name="q1" value="balanced"> Balanced<br>
+    <input type="radio" name="q1" value="balanced"> Combination<br>
 
     <p>2) What is your main skincare goal?</p>
     <input type="radio" name="q2" value="hydrate"> Hydration<br>
@@ -159,10 +159,19 @@
     let skinType = form["q1"].value;
     let goal = form["q2"].value;
     let sunscreen = form["q3"].value;
-
-    let message = "Your skin type seems " + skinType + ". ";
+    if (skinType=="dry") {
+    let message = "Your skin type seems " + skinType + ". " + "Apply a serum before adding moisturizer to help moisture retention. Incorporate ingredients like hyaluronic acid, ceramides, and glycerin to boost hydration and support skin health.";
     message += "Your main goal is " + goal + ". ";
     message += (sunscreen !== "daily") ? "Try to use sunscreen more often!" : "Great job using sunscreen daily!";
+    } else if (skinType=="oily") {
+    let message = "Your skin type seems " + skinType + ". " + "Choose lightweight, non-comedogenic moisturizers that hydrate without clogging pores. Look for ingredients like niacinamide, salicylic acid, charcoal, or clay to help manage oil and refine pores.";
+    message += "Your main goal is " + goal + ". ";
+    message += (sunscreen !== "daily") ? "Try to use sunscreen more often!" : "Great job using sunscreen daily!";
+    } else {
+    let message = "Your skin type seems " + skinType + ". " + "Apply lightweight moisturizers to oily areas and richer creams to dry patches as needed. Adjust your routine seasonally — your skin may lean more oily in summer and more dry in winter.";
+    message += "Your main goal is " + goal + ". ";
+    message += (sunscreen !== "daily") ? "Try to use sunscreen more often!" : "Great job using sunscreen daily!";
+    }
 
     document.getElementById("result").innerText = message;
     }

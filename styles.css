@@ -63,107 +63,6 @@ section.info p {
   cursor: pointer;
 }
 
-/* Smartphones */
-@media (max-width: 600px) {
-footer {
-  background-color: #b5aba1;  
-  text-align: center;
-  padding: 2px;
-  font-size: 8px;
-  color: #333;
-  border-top: 1px solid #ddd;
-  line-height: 0.2;
-}
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: #f8f8f8;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-  }
-
-  .hamburger {
-    display: block; 
-  }
-
-  .nav-links.show {
-    display: flex; 
-  }
-  .overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-.hidden {
-  display: none !important;
-}
-section.info {
-    padding: 5px;
-    background-color: #f8f4e3; 
-    text-align: center;      
-  }
-
-  section.info h2 {
-    font-size: 12px;           
-    margin-bottom: 4px;
-  }
-
-  section.info p {
-    font-size: 8px;           
-    line-height: 1;       
-  }
-
-  section.info ol {
-    font-size: 6px;
-    line-height: 1;
-    padding-left: 4px;        
-    text-align: left;          
-  }
- .quizguide {
-    font-size:12px;
- }
-
-
-.popup {
-  background: #fff;
-  width: min(60vw, 150px);  
-  border-radius: 8px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  text-align: center;
-  padding: 8px;             
-}
-
-.popup h2 {
-  margin-top: 0;
-  color: #2e6332;
-  font-size: 12px;           
-}
-
-.popup p {
-  font-size: 8px;          
-}
-
-.btn {
-  margin-top: 6px;
-  padding: 8px 12px;       
-  border: none;
-  border-radius: 5px;
-  background: #67936f;
-  color: #fff;
-  font-weight: bold;
-  font-size: 8px;           
-  cursor: pointer;
-}
-}
 
 /* Pop up */
     .overlay {
@@ -262,4 +161,117 @@ footer {
   color: #333;
   border-top: 1px solid #ddd;
   line-height: 0.8;
+}
+
+/* Smartphones */
+@media (max-width: 600px) {
+footer {
+  background-color: #b5aba1;  
+  text-align: center;
+  padding: 1px;
+  font-size: 7px;
+  color: #333;
+  border-top: 1px solid #ddd;
+  line-height: 1;
+}
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #f8f8f8;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    z-index: 1000; 
+  }
+
+  .hamburger {
+    display: block; 
+  }
+
+  .nav-links.show {
+    display: flex; 
+  }
+  .nav-links li {
+    margin: 10px 0;              
+  }
+  .nav-links li a {
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+  }
+
+  .overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.hidden {
+  display: none !important;
+}
+section.info {
+    padding: 5px;
+    background-color: #f8f4e3; 
+    text-align: center;      
+  }
+
+  section.info h2 {
+    font-size: 16px;           
+    margin-bottom: 4px;
+  }
+
+  section.info p {
+    font-size: 12px;           
+    line-height: 1;       
+  }
+
+  section.info ol {
+    font-size: 10px;
+    line-height: 1;
+    padding-left: 4px;        
+    text-align: left;          
+  }
+ .quizguide {
+    font-size:12px;
+ }
+
+
+.popup {
+  background: #fff;
+  width: min(60vw, 150px);  
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  text-align: center;
+  padding: 8px;             
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #2e6332;
+  font-size: 12px;           
+}
+
+.popup p {
+  font-size: 8px;          
+}
+
+.btn {
+  margin-top: 6px;
+  padding: 8px 12px;       
+  border: none;
+  border-radius: 5px;
+  background: #67936f;
+  color: #fff;
+  font-weight: bold;
+  font-size: 8px;           
+  cursor: pointer;
+}
 }
